@@ -1,0 +1,25 @@
+node_modules
+dist
+test/temp
+bower_components
+.tmp
+tmp
+.src
+test/bower_components/
+.DS_Store
+#*
+*~
+.tern-port
+flycheck*.js
+elm-stuff
+
+# Editor-specific
+.idea
+*.sublime-project
+*.sublime-workspace
+.settings
+
+# Misc
+ignore
+npm-debug.log
+.env

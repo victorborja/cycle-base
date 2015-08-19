@@ -1,0 +1,9 @@
+{
+  "env": {
+    "production": {
+      "optional": ["optimisation", "minification"]
+    }
+  },
+  "optional": ["es7.decorators"],
+  "ignore": ["node_modules", "bower_components", "*flycheck*"]
+}
