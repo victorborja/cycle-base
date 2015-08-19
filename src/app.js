@@ -2,7 +2,7 @@
 import {makeDOMDriver, hJSX} from '@cycle/dom';
 
 function view({counter$}) {
-  const view$ = counter$.map(value => 
+  const view$ = counter$.map(value =>
     <div>
       <button id="dec">-</button>
       <code>{value}</code>
@@ -13,16 +13,16 @@ function view({counter$}) {
 
 function model({increment$, decrement$}) {
   const counter$ = increment$.merge(decrement$).
-    startWith(0).scan((a,b) => a + b);
+    startWith(0).scan((a, b) => a + b);
   return {counter$};
 }
 
 function intent(dom) {
   const increment$ = dom.get('#inc', 'click')
-      .map(ev => 1);
+      .map(() => 1);
 
   const decrement$ = dom.get('#dec', 'click')
-      .map(ev => -1);
+      .map(() => -1);
 
   return {increment$, decrement$};
 }
@@ -34,6 +34,6 @@ function main({DOM}) {
 
 function drivers() {
   return {DOM: makeDOMDriver('#app')};
-};
+}
 
 export {main, drivers};
